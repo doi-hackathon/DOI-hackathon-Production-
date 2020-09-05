@@ -2287,7 +2287,8 @@ img.pull-right {
       ts-footer
  ==================================*/
 .ts-footer {
-  background: #1a1831;
+  background: rgb(232,0,133);
+  background: linear-gradient(90deg, rgba(232,0,133,1) 39%, rgba(128,62,151,1) 100%);
   padding: 250px 0 50px; }
 
 .ts-footer-social ul {
@@ -2302,7 +2303,7 @@ img.pull-right {
       border-radius: 50%;
       -webkit-border-radius: 50%;
       -ms-border-radius: 50%;
-      border: 1px solid #525164;
+      border: 1px solid #FFFFFF;
       text-align: center;
       color: #fff;
       font-size: 14px;
@@ -2318,7 +2319,7 @@ img.pull-right {
 .footer-menu ul li {
   display: inline-block; }
   .footer-menu ul li a {
-    color: #a8a8ad;
+    color: #FFFFFF;
     margin: 0 20px;
     position: relative; }
     .footer-menu ul li a:before {
@@ -2328,7 +2329,7 @@ img.pull-right {
       bottom: 0;
       margin: auto;
       content: '';
-      background: #5f5e6f;
+      background: #FFFFFF;
       width: 5px;
       height: 5px;
       border-radius: 50%;
@@ -2341,7 +2342,7 @@ img.pull-right {
 
 .copyright-text p {
   margin-bottom: 0;
-  color: #a8a8ad; }
+  color: #FFFFFF; }
 
 .ts-footer.ts-footer-item {
   background: transparent;
