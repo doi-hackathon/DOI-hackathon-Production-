@@ -52,8 +52,10 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
-				<form id="contact-form" class="contact-form" action="contact-form.php" method="post">
-					<div class="error-container"></div>
+				<form id="contact-form" class="contact-form" th:action="@{/login}" method="POST">
+					<div class="error-container"><small class="form-text text-center" style="color: #ff7669" th:if="${param.error}">Invalid Username.</small>
+						<small class="form-text text-center" style="color: #ff7669" th:if="${param.error}">Or</small>
+						<small class="form-text text-center" style="color: #ff7669" th:if="${param.error}">Invalid Password.</small></div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
