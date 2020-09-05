@@ -3,39 +3,75 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
-<nav th:fragment="navbar" id="navigation" class="navbar sticky-top navbar-expand-lg navbar-dark">
-    <a href="/"><img src="/img/doi-logo.png" class="navbar-brand m-0 p-0 ml-3" id="navbar-brand"
-                     style="width: 150px; height: 55px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-<!--                <ul class="navbar-nav mr-auto mt-1 mr-3  mt-lg-0">-->
-<!--                    <li class="nav-item mr-3">-->
-<!--                        <a class="nav-link" href="/about">ABOUT US</a>-->
-<!--                    </li>-->
-<!--                    <th:block sec:authorize="isAuthenticated()">-->
-<!--                        <a id="user-dashboard-link" class="mav-item nav-link" href="/dashboard">USER DASHBOARD</a>-->
-<!--                    </th:block>-->
-<!--                </ul>-->
-        <th:block sec:authorize="isAnonymous()">
-<!--            <form th:action="@{/login}" th:method="get" class="form-inline my-lg-0">-->
-<!--                <button id="login-button" class="btn rounded-pill" style="background-color: #E80085; color: white">Login</button>-->
+<!--<nav th:fragment="navbar" id="navigation" class="navbar sticky-top navbar-expand-lg navbar-dark">-->
+<!--    <a href="/"><img src="/img/doi-logo.png" class="navbar-brand m-0 p-0 ml-3" id="navbar-brand"-->
+<!--                     style="width: 150px; height: 55px"></a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"-->
+<!--            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">-->
+<!--&lt;!&ndash;                <ul class="navbar-nav mr-auto mt-1 mr-3  mt-lg-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="nav-item mr-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a class="nav-link" href="/about">ABOUT US</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th:block sec:authorize="isAuthenticated()">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a id="user-dashboard-link" class="mav-item nav-link" href="/dashboard">USER DASHBOARD</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </th:block>&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--        <th:block sec:authorize="isAnonymous()">-->
+<!--&lt;!&ndash;            <form th:action="@{/login}" th:method="get" class="form-inline my-lg-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                <button id="login-button" class="btn rounded-pill" style="background-color: #E80085; color: white">Login</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </form>&ndash;&gt;-->
+<!--            <a href="/login" class="btn rounded-pill ml-2 mr-3" style="background-color: #E80085; color: white">Login</a>-->
+
+<!--        </th:block>-->
+<!--        <th:block sec:authorize="isAuthenticated()">-->
+<!--            <form th:action="@{/logout}" th:method="post" class="form-inline my-2 my-lg-0">-->
+<!--                <button class="btn rounded-pill" style="background-color: #E80085; color: white">Logout</button>-->
 <!--            </form>-->
-            <a href="/login" class="btn rounded-pill ml-2 mr-3" style="background-color: #E80085; color: white">Login</a>
-
-        </th:block>
-        <th:block sec:authorize="isAuthenticated()">
-            <form th:action="@{/logout}" th:method="post" class="form-inline my-2 my-lg-0">
-                <button class="btn rounded-pill" style="background-color: #E80085; color: white">Logout</button>
-            </form>
-        </th:block>
+<!--        </th:block>-->
 
 
-        <a href="/about" class="btn rounded-pill ml-2 mr-3" style="background-color: #E80085; color: white">Meet the Developers</a>
+<!--        <a href="/about" class="btn rounded-pill ml-2 mr-3" style="background-color: #E80085; color: white">Meet the Developers</a>-->
 
 
-    </div>
-</nav>
+<!--    </div>-->
+<!--</nav>-->
+
+<!-- Header start -->
+<header id="header" class="header header-transparent" style="background-color: #FFFFFF">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- logo-->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logos/doi-logo.png" alt="" style="width: 200px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/about" style="color: #803e97">Meet the Developers</a>
+                    </li>
+                    <th:block sec:authorize="isAnonymous()">
+                    <li class="header-ticket nav-item">
+                        <a class="ticket-btn btn" href="/login" style="background-color: #803e97"> Login
+                        </a>
+                    </li>
+                        </th:block>
+                    <th:block sec:authorize="isAuthenticated()">
+                        <li class="header-ticket nav-item">
+                            <a class="ticket-btn btn" href="/logout" style="background-color: #803e97"> Logout
+                            </a>
+                        </li>
+                    </th:block>
+                </ul>
+            </div>
+        </nav>
+    </div><!-- container end-->
+</header>
+<!--/ Header end -->
 </html>
