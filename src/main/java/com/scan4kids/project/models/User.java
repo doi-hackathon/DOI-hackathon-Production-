@@ -28,18 +28,15 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column
-    private boolean isJudge;
-
     public User(){}
 
-    public User(String username, String firstName, String lastName, String password, String email, boolean isJudge) {
+    public User(String username, String firstName, String lastName, String password, String email) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
-        this.isJudge = isJudge;
+
 
     }
 
@@ -50,17 +47,16 @@ public class User {
         this.lastName = copy.lastName;
         this.password = copy.password;
         this.email = copy.email;
-        this.isJudge = copy.isJudge;
+
     }
 
-    public User(long id, String username, String firstName, String lastName, String password, String email, boolean isJudge) {
+    public User(long id, String username, String firstName, String lastName, String password, String email) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
-        this.isJudge = isJudge;
     }
 
     public long getId() {
@@ -111,7 +107,4 @@ public class User {
         this.email = email;
     }
 
-    public boolean isJudge() { return isJudge; }
-
-    public void setJudge(boolean judge) {isJudge = judge; }
 }
