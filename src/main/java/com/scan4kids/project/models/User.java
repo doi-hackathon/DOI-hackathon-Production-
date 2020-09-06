@@ -28,6 +28,11 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private Role role;
+
+
     public User(){}
 
     public User(String username, String firstName, String lastName, String password, String email) {
