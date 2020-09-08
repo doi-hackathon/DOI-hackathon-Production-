@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="student-dash">
+    <div class="body-inner">
+        <div th:replace="fragments/navbar">
+            partial content goes here...
+        </div>
+
+        <div id="page-banner-area" class="page-banner-area" style="background-image:url(./images/hero_area/banner_bg.jpg)">
+            <!-- Subpage title start -->
+            <div class="page-banner-title">
+                <div class="text-center">
+                    <h2>Welcome, <span class="ml-2" th:text="${currentUser.firstName + ' ' + currentUser.lastName}"></span></h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                        </li>
+                    </ol>
+                </div>
+            </div><!-- Subpage title end -->
+        </div><!-- Page Banner end -->
+
+        <section id="main-container" class="main-container">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-md-8 col-sm-12 mx-auto">
+                        <div class="post">
+
+
+                            <div class="post-body mt-2 pt-3">
+                                <div class="post-meta">
+
+
+
+                                </div>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">Challenge Instructions</a>
+                                    </h2>
+                                </div><!-- header end -->
+
+                                <div class="entry-content">
+                                    <p>Younger people can pass along COVID-19 to their
+                                        families and neighbors if they are positive but feel fine, may not have symptoms and have not been tested. Your task is to produce a deliverable that gives insights to how
+                                        COVID is impacting young people in Dallas. To help facilitate your project, mentors from the data industry in
+                                        Dallas will offer ‘office hours’ as a resource to help you develop your work. You can sign up for a mentor by clicking the "Find a Mentor" button below. Go to the "Data-sets" portion of the page to find out more about the data you will be using to complete this challenge.</p>
+                                </div>
+
+                                <a href="#" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Find a Mentor
+                                </a>
+
+
+                            </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+                        <div class="post">
+
+
+                            <div class="post-body mt-2 pt-3">
+                                <div class="post-meta">
+
+
+
+                                </div>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">Data-Sets</a>
+                                    </h2>
+                                </div><!-- header end -->
+
+                                <div class="entry-content">
+                                    <p>Below are links where you will find COVID data from which you can draw your own conclusions and apply them to this challenge.</p>
+                                    <ul>
+                                        <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5"><li style="list-style: none">Covid-19 DCHHS Summary</li></a>
+                                        <a href="https://dshs.texas.gov/coronavirus/additionaldata.aspx"><li style="list-style: none">Texas Covid-19 Data</li></a>
+                                        <a href="https://app.luminpdf.com/viewer/5f57b2c179634100197a0861"><li style="list-style: none">PCCI Covid-19 City Distribution</li></a>
+                                        <a href="http://cdi.pccinnovation.org:8282/embed?groupId=cdb3c8c0-1dcf-4215-a667-3c4ab89e5acf&reportId=4b60c992-82ca-4632-8d45-608206dd4414"><li style="list-style: none">PCCI Graphs and Charts</li></a>
+                                    </ul>
+                                </div>
+                            </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+                        <div class="post">
+
+
+                            <div class="post-body mt-2 pt-3">
+                                <div class="post-meta">
+
+                                </div>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">Submissions</a>
+                                    </h2>
+                                </div><!-- header end -->
+
+                                <div class="entry-content">
+                                    <p>Once you are satisfied with your solution to the challenge you may use the form below to upload the file that contains that solution.</p>
+                                </div>
+
+                                <div class="post-footer">
+<!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
+                                    <h3 class="card-title text-center">Upload Your Submission</h3>
+                                    <form th:action="@{/submissions/create}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
+                                        <input class="mt-2" id="file" name="file" type="file" />
+                                        <br>
+                                        <input class="mt-2" type="submit" value="upload" />
+                                    </form>
+                                </div>
+
+                            </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+
+
+                    </div><!-- Content Col end -->
+
+                </div><!-- Main row end -->
+
+            </div><!-- Container end -->
+        </section><!-- Main container end -->
+
+        <!-- ts footer area start-->
+        <div class="footer-area">
+
+            <!-- ts-book-seat start-->
+
+            <!-- book seat  end-->
+
+            <!-- footer start-->
+            <footer class="ts-footer pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- footer social end-->
+                            <div class="footer-menu text-center mb-25">
+
+                            </div><!-- footer menu end-->
+                            <div class="copyright-text text-center">
+                                <p>Powered by Codeup © 2020 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer end-->
+
+            <div class="BackTo">
+                <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
+            </div>
+
+        </div>
+        <!-- ts footer area end-->
+
+
+
+
+        <!-- Javascript Files
+              ================================================== -->
+        <!-- initialize jQuery Library -->
+        <script src="js/jquery.js"></script>
+
+        <script src="js/popper.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Counter -->
+        <script src="js/jquery.appear.min.js"></script>
+        <!-- Countdown -->
+        <script src="js/jquery.jCounter.js"></script>
+        <!-- magnific-popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/wow.min.js"></script>
+        <!-- isotop -->
+        <script src="js/isotope.pkgd.min.js"></script>
+
+        <!-- Template custom -->
+        <script src="js/main.js"></script>
+    </div>
+</div>
+
+</body>
+</html>

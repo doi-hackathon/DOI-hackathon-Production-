@@ -29,19 +29,24 @@ public class User {
     private String email;
 
     @ManyToOne
-    @JoinColumn (name = "user_id")
+    @JoinColumn (name = "role_id")
     private Role role;
+
+    @ManyToOne
+    @JoinColumn (name = "submission_id")
+    private Submission submission;
 
 
     public User(){}
 
-    public User(String username, String firstName, String lastName, String password, String email) {
+    public User(String username, String firstName, String lastName, String password, String email, Role role, Submission submission) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
-
+        this.role = role;
+        this.submission = submission;
 
     }
 
@@ -52,16 +57,20 @@ public class User {
         this.lastName = copy.lastName;
         this.password = copy.password;
         this.email = copy.email;
+        this.role = copy.role;
+        this.submission = copy.submission;
 
     }
 
-    public User(long id, String username, String firstName, String lastName, String password, String email) {
+    public User(long id, String username, String firstName, String lastName, String password, String email, Role role, Submission submission) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
+        this.role = role;
+        this.submission = submission;
     }
 
     public long getId() {
@@ -112,4 +121,19 @@ public class User {
         this.email = email;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Submission getSubmission() {
+        return submission;
+    }
+
+    public void setSubmission(Submission submission) {
+        this.submission = submission;
+    }
 }
