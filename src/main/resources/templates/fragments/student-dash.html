@@ -48,8 +48,14 @@
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur corporis eaque error eum in, laudantium quasi quia repellat repellendus reprehenderit sapiente! Ad assumenda aut dicta dolores dolorum eos, error expedita in incidunt ipsum itaque maiores molestias mollitia natus odio officia omnis, optio pariatur placeat, praesentium sapiente similique vero voluptatibus.</p>
+                                    <p>Younger people can pass along COVID-19 to their
+                                        families and neighbors if they are positive but feel fine, may not have symptoms and have not been tested. Your task is to produce a deliverable that gives insights to how
+                                        COVID is impacting young people in Dallas. To help facilitate your project, mentors from the data industry in
+                                        Dallas will offer ‘office hours’ as a resource to help you develop your work. You can sign up for a mentor by clicking the "Find a Mentor" button below. Go to the "Data-sets" portion of the page to find out more about the data you will be using to complete this challenge.</p>
                                 </div>
+
+                                <a href="#" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Find a Mentor
+                                </a>
 
 
                             </div><!-- post-body end -->
@@ -70,10 +76,9 @@
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur corporis eaque error eum in, laudantium quasi quia repellat repellendus reprehenderit sapiente! Ad assumenda aut dicta dolores dolorum eos, error expedita in incidunt ipsum itaque maiores molestias mollitia natus odio officia omnis, optio pariatur placeat, praesentium sapiente similique vero voluptatibus.</p>
+                                    <p>Below is a link where you will find COVID data from which you can draw your own conclusions and apply them to this challenge.</p>
                                     <ul>
-                                        <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5"><li style="list-style: none">DATA SET EXAMPLE</li></a>
+                                        <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5"><li style="list-style: none">DATA SET LINK</li></a>
                                     </ul>
                                 </div>
                             </div><!-- post-body end -->
@@ -92,13 +97,17 @@
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores cum error esse expedita, explicabo incidunt ipsum nisi, nostrum odio officiis pariatur possimus quam quas qui quod recusandae ut velit voluptates voluptatum. Accusantium assumenda atque dignissimos illum minima nihil obcaecati quaerat quisquam reiciendis, sint soluta suscipit tenetur ut, velit, voluptatum.</p>
+                                    <p>Once you are satisfied with your solution to the challenge you may use the form below to upload the file that contains that solution.</p>
                                 </div>
 
                                 <div class="post-footer">
-                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>
-                                    <!--                                    <h3 class="card-title text-center">Upload Your Submission</h3>-->
-
+<!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
+                                    <h3 class="card-title text-center">Upload Your Submission</h3>
+                                    <form th:action="@{/submissions/create}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
+                                        <input class="mt-2" id="file" name="file" type="file" />
+                                        <br>
+                                        <input class="mt-2" type="submit" value="upload" />
+                                    </form>
                                 </div>
 
                             </div><!-- post-body end -->
@@ -126,10 +135,7 @@
                         <div class="col-lg-8 mx-auto">
                             <!-- footer social end-->
                             <div class="footer-menu text-center mb-25">
-                                <ul>
-                                    <li><a href="#">About Eventime</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
+
                             </div><!-- footer menu end-->
                             <div class="copyright-text text-center">
                                 <p>Powered by Codeup © 2020 </p>

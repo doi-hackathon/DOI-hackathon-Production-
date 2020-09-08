@@ -40,7 +40,7 @@ public class SubmissionController {
     @GetMapping("/submissions/create")
     public String showCreateForm(Model model) {
         model.addAttribute("submission", new Submission());
-        return "submissions/create";
+        return "users/dashboard";
     }
 
 //    @PostMapping("/submissions/create")
