@@ -28,20 +28,27 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column
+    private String grade;
+
+    @Column
+    private String school;
+
     @ManyToOne
     @JoinColumn (name = "role_id")
     private Role role;
 
     public User(){}
 
-    public User(String username, String firstName, String lastName, String password, String email, Role role) {
+    public User(String username, String firstName, String lastName, String password, String email, Role role, String grade, String school) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.role = role;
-
+        this.grade = grade;
+        this.school = school;
     }
 
     public User(User copy) {
@@ -52,6 +59,8 @@ public class User {
         this.password = copy.password;
         this.email = copy.email;
         this.role = copy.role;
+        this.grade = copy.grade;
+        this.school = copy.school;
     }
 
     public User(long id, String username, String firstName, String lastName, String password, String email, Role role) {
@@ -120,4 +129,19 @@ public class User {
         this.role = role;
     }
 
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
 }
