@@ -17,21 +17,19 @@ public class Submission {
     @OneToOne
     private User owner;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "submission")
-    private List<User> judges;
 
     public Submission() {
     }
 
-    public Submission(long id, String submission_file, User owner, List<User> judges) {
+    public Submission(long id, String submission_file, User owner) {
         this.id = id;
         this.submission_file = submission_file;
         this.owner = owner;
-        this.judges = judges;
     }
 
-    public Submission(String submission_file) {
+    public Submission(String submission_file, User owner) {
         this.submission_file = submission_file;
+        this.owner = owner;
     }
 
     public long getId() {
@@ -58,11 +56,4 @@ public class Submission {
         this.owner = owner;
     }
 
-    public List<User> getJudges() {
-        return judges;
-    }
-
-    public void setJudges(List<User> judges) {
-        this.judges = judges;
-    }
 }

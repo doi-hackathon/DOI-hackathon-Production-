@@ -32,21 +32,15 @@ public class User {
     @JoinColumn (name = "role_id")
     private Role role;
 
-    @ManyToOne
-    @JoinColumn (name = "submission_id")
-    private Submission submission;
-
-
     public User(){}
 
-    public User(String username, String firstName, String lastName, String password, String email, Role role, Submission submission) {
+    public User(String username, String firstName, String lastName, String password, String email, Role role) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.role = role;
-        this.submission = submission;
 
     }
 
@@ -58,11 +52,9 @@ public class User {
         this.password = copy.password;
         this.email = copy.email;
         this.role = copy.role;
-        this.submission = copy.submission;
-
     }
 
-    public User(long id, String username, String firstName, String lastName, String password, String email, Role role, Submission submission) {
+    public User(long id, String username, String firstName, String lastName, String password, String email, Role role) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
@@ -70,7 +62,6 @@ public class User {
         this.password = password;
         this.email = email;
         this.role = role;
-        this.submission = submission;
     }
 
     public long getId() {
@@ -129,11 +120,4 @@ public class User {
         this.role = role;
     }
 
-    public Submission getSubmission() {
-        return submission;
-    }
-
-    public void setSubmission(Submission submission) {
-        this.submission = submission;
-    }
 }
