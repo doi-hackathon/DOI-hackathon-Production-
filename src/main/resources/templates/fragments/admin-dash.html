@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Challenge Instructions</a>
+                                        <a href="#">6th - 8th Grade Contestants</a>
                                     </h2>
                                 </div><!-- header end -->
 
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Data-Sets</a>
+                                        <a href="#">9th - 10th Grade Contestants</a>
                                     </h2>
                                 </div><!-- header end -->
 
@@ -103,12 +103,12 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Mentorship</a>
+                                        <a href="#">11th - 12th Grade contestants</a>
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                  <p>To help facilitate your project, mentors from the data industry in Dallas will offer “office hours” as a resource to help you develop your work. You can sign up for a mentor slot by clicking the “Find a Mentor” button below. This link will take you to a spreadsheet where you can sign up for a slot. Note: this spreadsheet will track any changes made to it, so please sign up for an empty slot and do not erase someone else’s name to take their slot. Doing so will mean you’ll be disqualified. Once you sign up, you’ll be given contact information for a mentor who is available during your timeslot. Please reach out to them to schedule your appointment.</p>
+                                    <p>To help facilitate your project, mentors from the data industry in Dallas will offer “office hours” as a resource to help you develop your work. You can sign up for a mentor slot by clicking the “Find a Mentor” button below. This link will take you to a spreadsheet where you can sign up for a slot. Note: this spreadsheet will track any changes made to it, so please sign up for an empty slot and do not erase someone else’s name to take their slot. Doing so will mean you’ll be disqualified. Once you sign up, you’ll be given contact information for a mentor who is available during your timeslot. Please reach out to them to schedule your appointment.</p>
                                 </div>
 
                                 <a href="https://docs.google.com/spreadsheets/d/1W7GYS40yhLOMVVPrfeUmY5TBpoRuPxierH1VvJOCeBY/edit#gid=0" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Find a Mentor
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Submissions</a>
+                                        <a href="#">Conflicts Of Interest</a>
                                     </h2>
                                 </div><!-- header end -->
 
@@ -136,13 +136,8 @@
                                 </div>
 
                                 <div class="post-footer">
-<!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
-                                    <h3 class="card-title text-center">Upload Your Submission</h3>
-                                    <form th:action="@{/submissions/create}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
-                                        <input class="mt-2" id="file" name="file" type="file" />
-                                        <br>
-                                        <input class="mt-2" type="submit" value="upload" />
-                                    </form>
+                                    <!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
+
                                 </div>
 
                             </div><!-- post-body end -->
@@ -224,7 +219,7 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="student-dash">
+<div th:fragment="admin-dash">
     <div class="body-inner">
         <div th:replace="fragments/navbar">
             partial content goes here...
