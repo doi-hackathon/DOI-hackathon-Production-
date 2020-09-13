@@ -37,6 +37,16 @@
 							<label for="email">Email address</label>
 							<small id="emailHelp" class="form-text text-center" style="color: #ff7669" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
 						</div>
+						<div class="form-label-group">
+							<input type="text" id="grade" class="form-control" th:classappend="validate" th:field="*{grade}" required>
+							<label for="grade">Grade</label>
+							<small id="gradeHelp" class="form-text text-center" style="color: #ff7669" th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></small>
+						</div>
+						<div class="form-label-group">
+							<input type="text" id="school" class="form-control" th:classappend="validate" th:field="*{school}" required>
+							<label for="school">school</label>
+							<small id="schoolHelp" class="form-text text-center" style="color: #ff7669" th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></small>
+						</div>
 						<hr>
 						<div class="form-label-group">
 							<input type="password" id="password" class="form-control" th:classappend="validate" th:field="*{password}" required/>
