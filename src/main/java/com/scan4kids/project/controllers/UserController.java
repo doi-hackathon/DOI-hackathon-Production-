@@ -2,6 +2,7 @@ package com.scan4kids.project.controllers;
 
 import com.scan4kids.project.daos.UsersRepository;
 import com.scan4kids.project.models.User;
+import com.scan4kids.project.services.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -18,11 +20,14 @@ public class UserController {
 
     private UsersRepository usersDao;
     private PasswordEncoder passwordEncoder;
+    private UserService userService;
 
 
-    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder) {
+    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder, UserService userService) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.userService = userService;
+
      }
 
     @GetMapping("/sign-up")
@@ -80,6 +85,13 @@ public class UserController {
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("currentUserEmail", currentUser.getEmail());
         return "users/judge-dashboard";
+    }
+
+    @GetMapping("/test-import")
+    @ResponseBody
+    public String importUsersFromCSV(){
+        userService.importUsersCSV();
+        return "imported";
     }
 
 }
