@@ -43,14 +43,18 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">6th - 8th Grade Contestants</a>
+                                        6th - 8th Grade Contestants
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
                                     <div class="my-2" th:each="user : ${users}" th:if="${user.grade == '6th - 8th grade'}">
-                                        <p th:text="${user.firstName + ' ' + user.lastName + ', ' + user.grade + ', ' + user.school}"> </p>
-                                    </div>
+                                        <ul class="d-flex" style="list-style: none">
+                                            <li th:text="${'STUDENT NAME: ' + user.firstName + ' ' + user.lastName}"></li>
+                                            <li class="ml-3" th:text="${'GRADE: ' + user.grade}"></li>
+                                            <li class="ml-3" th:text="${'SCHOOL: ' + user.school}"></li>
+                                        </ul>
+                                        <hr>                                    </div>
                                 </div>
 
                             </div><!-- post-body end -->
@@ -66,14 +70,18 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">9th - 10th Grade Contestants</a>
+                                        9th - 10th Grade Contestants
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
                                     <div class="my-2" th:each="user : ${users}" th:if="${user.grade == '9th - 10th grade'}">
-                                        <p th:text="${user.firstName + ' ' + user.lastName + ', ' + user.grade + ', ' + user.school}"> </p>
-                                    </div>
+                                        <ul class="d-flex" style="list-style: none">
+                                            <li th:text="${'STUDENT NAME: ' + user.firstName + ' ' + user.lastName}"></li>
+                                            <li class="ml-3" th:text="${'GRADE: ' + user.grade}"></li>
+                                            <li class="ml-3" th:text="${'SCHOOL: ' + user.school}"></li>
+                                        </ul>
+                                        <hr>                                    </div>
                             </div><!-- post-body end -->
                         </div><!-- 1st post end -->
                         <div class="post">
@@ -82,7 +90,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">11th - 12th Grade contestants</a>
+                                        11th - 12th Grade contestants
                                     </h2>
                                 </div><!-- header end -->
 
@@ -108,7 +116,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Conflicts Of Interest</a>
+                                        Conflicts Of Interest
                                     </h2>
                                 </div><!-- header end -->
 
