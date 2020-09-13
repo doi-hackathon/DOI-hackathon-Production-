@@ -293,9 +293,12 @@ jQuery(function ($) {
       }, 800);
    });
 
+   $("#submission-confirmation").on("click", function () {
 
-   
-   // scrollme.init();
+   alert("Are you sure you want to submit this document?")
+   })
+
+
 
 
 });
