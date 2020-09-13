@@ -1,5 +1,6 @@
 package com.scan4kids.project.controllers;
 
+import com.scan4kids.project.daos.SubmissionsRepository;
 import com.scan4kids.project.daos.UsersRepository;
 import com.scan4kids.project.models.User;
 import com.scan4kids.project.services.UserService;
@@ -21,12 +22,14 @@ public class UserController {
     private UsersRepository usersDao;
     private PasswordEncoder passwordEncoder;
     private UserService userService;
+    private SubmissionsRepository submissionsDao;
 
 
-    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder, UserService userService) {
+    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder, UserService userService, SubmissionsRepository submissionsDao) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
+        this.submissionsDao = submissionsDao;
 
      }
 
@@ -76,6 +79,7 @@ public class UserController {
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("currentUserRole", currentUser.getRole().getId());
         model.addAttribute("currentUserEmail", currentUser.getEmail());
+        model.addAttribute("currentUserSubmissions", submissionsDao.findSubmissionsByOwner(currentUser));
         return "users/dashboard";
     }
 
