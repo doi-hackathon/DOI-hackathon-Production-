@@ -5,220 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="student-dash">
-    <div class="body-inner">
-        <div th:replace="fragments/navbar">
-            partial content goes here...
-        </div>
-
-        <div id="page-banner-area" class="page-banner-area" style="background-image:url(./images/hero_area/banner_bg.jpg)">
-            <!-- Subpage title start -->
-            <div class="page-banner-title">
-                <div class="text-center">
-                    <h2>Welcome, <span class="ml-2" th:text="${currentUser.firstName + ' ' + currentUser.lastName}"></span></h2>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                        </li>
-                    </ol>
-                </div>
-            </div><!-- Subpage title end -->
-        </div><!-- Page Banner end -->
-
-        <section id="main-container" class="main-container">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-md-8 col-sm-12 mx-auto">
-                        <div class="post">
-
-
-                            <div class="post-body mt-2 pt-3">
-                                <div class="post-meta">
-
-
-
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="#">6th - 8th Grade Contestants</a>
-                                    </h2>
-                                </div><!-- header end -->
-
-                                <div class="entry-content">
-                                    <p>The COVID-19 pandemic is affecting people across our region. The DFW metroplex has had over 150,000 cases of COVID-19, and many of these cases have occurred in younger people. Those who are younger may feel fine and not have any symptoms, but may be unknowingly spreading the virus to their friends and family because of it. This makes it especially important for teenagers and young adults to be aware of the risks of the virus and to have a good understanding of how it is impacting our communities.</p>
-                                    <p>The COVID-19 Student Data Challenge is an opportunity for you and other students from our area to analyze real data-sets to learn more about COVID-19 and what’s happening in the Dallas area. By participating in the challenge, not only will you learn more about data skills and have a chance to win a prize, you will also have the opportunity to help spread awareness of COVID-19 and keep our schools and communities safe.</p>
-                                    <p>Your task is to complete an analysis of any combination of data-sets provided and to communicate insights that you’ve learned about COVID-19 through the data. This analysis can be submitted as  Powerpoint, a dashboard, a written document, or any other format of communicating this information. The only rule is that submissions are capped at 10 pages maximum, including any charts and code. We encourage you to use visuals as needed to explain your information.</p>
-                                    <h3>Submissions will be judged on the following criteria:</h3>
-                                    <ul>
-                                        <li>Data Management: how effectively you used data</li>
-                                        <li>Creativity: how innovatively you used the data</li>
-                                        <li>Analysis: how thoughtful and insightful your results were</li>
-                                        <li>Visualization: how effective your data visualizations were</li>
-                                        <li>Coding: how well you used code to generate results</li>
-                                        <li>Professionalism: how neat your grammar, formatting, and citations are</li>
-                                    </ul>
-                                    <p>To help you with these projects, we will be providing optional mentorship appointments to get help from a local professional. You don’t have to speak with a mentor to enter the challenge, but if you’re interested in doing so, click the “Find a Mentor” box under the mentorship section.</p>
-                                    <p>Projects must be submitted in this portal by 11:59 pm on September 25th, 2020. Good luck!</p>
-                                </div>
-
-                            </div><!-- post-body end -->
-                        </div><!-- 1st post end -->
-                        <div class="post">
-
-
-                            <div class="post-body mt-2 pt-3">
-                                <div class="post-meta">
-
-
-
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="#">9th - 10th Grade Contestants</a>
-                                    </h2>
-                                </div><!-- header end -->
-
-                                <div class="entry-content">
-                                    <p>Below are links to provided COVID-19 data from which you can draw your own conclusions and apply them to this challenge. You are allowed to use other publicly available data to produce your project; however, you must cite your data sources and any data source that is deemed to be disreputable will disqualify your project.</p>
-                                    <ul>
-                                        <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5"><li style="list-style: none">Covid-19 DCHHS Summary</li></a>
-                                        <a href="https://dshs.texas.gov/coronavirus/additionaldata.aspx"><li style="list-style: none">Texas Covid-19 Data</li></a>
-                                        <a href="https://app.luminpdf.com/viewer/5f57b2c179634100197a0861"><li style="list-style: none">PCCI Covid-19 City Distribution</li></a>
-                                        <a href="http://cdi.pccinnovation.org:8282/embed?groupId=cdb3c8c0-1dcf-4215-a667-3c4ab89e5acf&reportId=4b60c992-82ca-4632-8d45-608206dd4414"><li style="list-style: none">PCCI Graphs and Charts</li></a>
-                                    </ul>
-                                </div>
-                            </div><!-- post-body end -->
-                        </div><!-- 1st post end -->
-                        <div class="post">
-
-
-                            <div class="post-body mt-2 pt-3">
-                                <div class="post-meta">
-
-
-
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="#">11th - 12th Grade contestants</a>
-                                    </h2>
-                                </div><!-- header end -->
-
-                                <div class="entry-content">
-                                    <p>To help facilitate your project, mentors from the data industry in Dallas will offer “office hours” as a resource to help you develop your work. You can sign up for a mentor slot by clicking the “Find a Mentor” button below. This link will take you to a spreadsheet where you can sign up for a slot. Note: this spreadsheet will track any changes made to it, so please sign up for an empty slot and do not erase someone else’s name to take their slot. Doing so will mean you’ll be disqualified. Once you sign up, you’ll be given contact information for a mentor who is available during your timeslot. Please reach out to them to schedule your appointment.</p>
-                                </div>
-
-                                <a href="https://docs.google.com/spreadsheets/d/1W7GYS40yhLOMVVPrfeUmY5TBpoRuPxierH1VvJOCeBY/edit#gid=0" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Find a Mentor
-                                </a>
-
-
-                            </div><!-- post-body end -->
-                        </div><!-- 1st post end -->
-
-                        <div class="post">
-
-
-                            <div class="post-body mt-2 pt-3">
-                                <div class="post-meta">
-
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="#">Conflicts Of Interest</a>
-                                    </h2>
-                                </div><!-- header end -->
-
-                                <div class="entry-content">
-                                    <p>Once you have completed your analysis and are ready to submit , you may use the form below to upload your file. Note: submissions over 25 megabytes will not be accepted. You will not be able to revise your file after submission.</p>
-                                </div>
-
-                                <div class="post-footer">
-                                    <!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
-
-                                </div>
-
-                            </div><!-- post-body end -->
-                        </div><!-- 1st post end -->
-
-
-                    </div><!-- Content Col end -->
-
-                </div><!-- Main row end -->
-
-            </div><!-- Container end -->
-        </section><!-- Main container end -->
-
-        <!-- ts footer area start-->
-        <div class="footer-area">
-
-            <!-- ts-book-seat start-->
-
-            <!-- book seat  end-->
-
-            <!-- footer start-->
-            <footer class="ts-footer pt-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <!-- footer social end-->
-                            <div class="footer-menu text-center mb-25">
-
-                            </div><!-- footer menu end-->
-                            <div class="copyright-text text-center">
-                                <p>Powered by Codeup © 2020 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer end-->
-
-            <div class="BackTo">
-                <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
-            </div>
-
-        </div>
-        <!-- ts footer area end-->
-
-
-
-
-        <!-- Javascript Files
-              ================================================== -->
-        <!-- initialize jQuery Library -->
-        <script src="js/jquery.js"></script>
-
-        <script src="js/popper.min.js"></script>
-        <!-- Bootstrap jQuery -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Counter -->
-        <script src="js/jquery.appear.min.js"></script>
-        <!-- Countdown -->
-        <script src="js/jquery.jCounter.js"></script>
-        <!-- magnific-popup -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <!-- carousel -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- Waypoints -->
-        <script src="js/wow.min.js"></script>
-        <!-- isotop -->
-        <script src="js/isotope.pkgd.min.js"></script>
-
-        <!-- Template custom -->
-        <script src="js/main.js"></script>
-    </div>
-</div>
-
-</body><!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 <div th:fragment="admin-dash">
     <div class="body-inner">
         <div th:replace="fragments/navbar">
@@ -257,25 +43,18 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Challenge Instructions</a>
+                                        6th - 8th Grade Contestants
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>The COVID-19 pandemic is affecting people across our region. The DFW metroplex has had over 150,000 cases of COVID-19, and many of these cases have occurred in younger people. Those who are younger may feel fine and not have any symptoms, but may be unknowingly spreading the virus to their friends and family because of it. This makes it especially important for teenagers and young adults to be aware of the risks of the virus and to have a good understanding of how it is impacting our communities.</p>
-                                    <p>The COVID-19 Student Data Challenge is an opportunity for you and other students from our area to analyze real data-sets to learn more about COVID-19 and what’s happening in the Dallas area. By participating in the challenge, not only will you learn more about data skills and have a chance to win a prize, you will also have the opportunity to help spread awareness of COVID-19 and keep our schools and communities safe.</p>
-                                    <p>Your task is to complete an analysis of any combination of data-sets provided and to communicate insights that you’ve learned about COVID-19 through the data. This analysis can be submitted as  Powerpoint, a dashboard, a written document, or any other format of communicating this information. The only rule is that submissions are capped at 10 pages maximum, including any charts and code. We encourage you to use visuals as needed to explain your information.</p>
-                                    <h3>Submissions will be judged on the following criteria:</h3>
-                                    <ul>
-                                        <li>Data Management: how effectively you used data</li>
-                                        <li>Creativity: how innovatively you used the data</li>
-                                        <li>Analysis: how thoughtful and insightful your results were</li>
-                                        <li>Visualization: how effective your data visualizations were</li>
-                                        <li>Coding: how well you used code to generate results</li>
-                                        <li>Professionalism: how neat your grammar, formatting, and citations are</li>
-                                    </ul>
-                                    <p>To help you with these projects, we will be providing optional mentorship appointments to get help from a local professional. You don’t have to speak with a mentor to enter the challenge, but if you’re interested in doing so, click the “Find a Mentor” box under the mentorship section.</p>
-                                    <p>Projects must be submitted in this portal by 11:59 pm on September 25th, 2020. Good luck!</p>
+                                    <div class="my-2" th:each="user : ${users}" th:if="${user.grade == '6th - 8th grade'}">
+                                        <ul class="d-flex" style="list-style: none">
+                                            <li th:text="${'STUDENT NAME: ' + user.firstName + ' ' + user.lastName}"></li>
+                                            <li class="ml-3" th:text="${'GRADE: ' + user.grade}"></li>
+                                            <li class="ml-3" th:text="${'SCHOOL: ' + user.school}"></li>
+                                        </ul>
+                                        <hr>                                    </div>
                                 </div>
 
                             </div><!-- post-body end -->
@@ -291,44 +70,40 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Data-Sets</a>
+                                        9th - 10th Grade Contestants
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>Below are links to provided COVID-19 data from which you can draw your own conclusions and apply them to this challenge. You are allowed to use other publicly available data to produce your project; however, you must cite your data sources and any data source that is deemed to be disreputable will disqualify your project.</p>
-                                    <ul>
-                                        <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5"><li style="list-style: none">Covid-19 DCHHS Summary</li></a>
-                                        <a href="https://dshs.texas.gov/coronavirus/additionaldata.aspx"><li style="list-style: none">Texas Covid-19 Data</li></a>
-                                        <a href="https://app.luminpdf.com/viewer/5f57b2c179634100197a0861"><li style="list-style: none">PCCI Covid-19 City Distribution</li></a>
-                                        <a href="http://cdi.pccinnovation.org:8282/embed?groupId=cdb3c8c0-1dcf-4215-a667-3c4ab89e5acf&reportId=4b60c992-82ca-4632-8d45-608206dd4414"><li style="list-style: none">PCCI Graphs and Charts</li></a>
-                                    </ul>
-                                </div>
+                                    <div class="my-2" th:each="user : ${users}" th:if="${user.grade == '9th - 10th grade'}">
+                                        <ul class="d-flex" style="list-style: none">
+                                            <li th:text="${'STUDENT NAME: ' + user.firstName + ' ' + user.lastName}"></li>
+                                            <li class="ml-3" th:text="${'GRADE: ' + user.grade}"></li>
+                                            <li class="ml-3" th:text="${'SCHOOL: ' + user.school}"></li>
+                                        </ul>
+                                        <hr>                                    </div>
                             </div><!-- post-body end -->
                         </div><!-- 1st post end -->
                         <div class="post">
-
-
                             <div class="post-body mt-2 pt-3">
                                 <div class="post-meta">
-
-
-
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Mentorship</a>
+                                        11th - 12th Grade contestants
                                     </h2>
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>To help facilitate your project, mentors from the data industry in Dallas will offer “office hours” as a resource to help you develop your work. You can sign up for a mentor slot by clicking the “Find a Mentor” button below. This link will take you to a spreadsheet where you can sign up for a slot. Note: this spreadsheet will track any changes made to it, so please sign up for an empty slot and do not erase someone else’s name to take their slot. Doing so will mean you’ll be disqualified. Once you sign up, you’ll be given contact information for a mentor who is available during your timeslot. Please reach out to them to schedule your appointment.</p>
+                                    <div class="my-2" th:each="user : ${users}" th:if="${user.grade == '11th - 12th grade'}">
+                                        <ul class="d-flex" style="list-style: none">
+                                            <li th:text="${'STUDENT NAME: ' + user.firstName + ' ' + user.lastName}"></li>
+                                            <li class="ml-3" th:text="${'GRADE: ' + user.grade}"></li>
+                                            <li class="ml-3" th:text="${'SCHOOL: ' + user.school}"></li>
+                                        </ul>
+                                        <hr>
+                                    </div>
                                 </div>
-
-                                <a href="https://docs.google.com/spreadsheets/d/1W7GYS40yhLOMVVPrfeUmY5TBpoRuPxierH1VvJOCeBY/edit#gid=0" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Find a Mentor
-                                </a>
-
-
                             </div><!-- post-body end -->
                         </div><!-- 1st post end -->
 
@@ -341,7 +116,7 @@
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">Submissions</a>
+                                        Conflicts Of Interest
                                     </h2>
                                 </div><!-- header end -->
 
@@ -351,12 +126,7 @@
 
                                 <div class="post-footer">
                                     <!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
-                                    <h3 class="card-title text-center">Upload Your Submission</h3>
-                                    <form th:action="@{/submissions/create}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
-                                        <input class="mt-2" id="file" name="file" type="file" />
-                                        <br>
-                                        <input class="mt-2" type="submit" value="upload" />
-                                    </form>
+
                                 </div>
 
                             </div><!-- post-body end -->
