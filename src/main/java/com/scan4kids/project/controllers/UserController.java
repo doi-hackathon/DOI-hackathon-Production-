@@ -67,6 +67,7 @@ public class UserController {
     public String showUserDashboard(Model model){
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = usersDao.getOne(currentUser.getId());
+        model.addAttribute("users", usersDao.findAll());
         model.addAttribute("currentUser", currentUser);
         model.addAttribute("currentUserRole", currentUser.getRole().getId());
         model.addAttribute("currentUserEmail", currentUser.getEmail());
