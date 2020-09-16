@@ -38,6 +38,8 @@ public class User {
     @JoinColumn (name = "role_id")
     private Role role;
 
+    //Many to many relationship with submissions for judging
+
     public User(){}
 
     public User(String username, String firstName, String lastName, String password, String email, Role role, String grade, String school) {

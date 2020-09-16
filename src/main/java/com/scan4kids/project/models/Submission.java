@@ -20,6 +20,7 @@ public class Submission {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "submission")
     private List<Score> scores;
 
+    //Need to look into many to many relationship with judges
 
     public Submission() {
     }
