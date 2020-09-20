@@ -22,20 +22,30 @@ public class Submission {
 
     //Need to look into many to many relationship with judges
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="submission_judges",
+            joinColumns={@JoinColumn(name="submission_id")},
+            inverseJoinColumns={@JoinColumn(name="judge_id")}
+    )
+    private List<User> judges;
+
     public Submission() {
     }
 
-    public Submission(long id, String submission_file, User owner, List<Score> scores) {
+    public Submission(long id, String submission_file, User owner, List<Score> scores, List<User> judges) {
         this.id = id;
         this.submission_file = submission_file;
         this.owner = owner;
         this.scores = scores;
+        this.judges = judges;
     }
 
-    public Submission(String submission_file, User owner, List<Score> scores) {
+    public Submission(String submission_file, User owner, List<Score> scores, List<User> judges) {
         this.submission_file = submission_file;
         this.owner = owner;
         this.scores = scores;
+        this.judges = judges;
     }
 
     public long getId() {
@@ -68,5 +78,13 @@ public class Submission {
 
     public void setScores(List<Score> scores) {
         this.scores = scores;
+    }
+
+    public List<User> getJudges() {
+        return judges;
+    }
+
+    public void setJudges(List<User> judges) {
+        this.judges = judges;
     }
 }

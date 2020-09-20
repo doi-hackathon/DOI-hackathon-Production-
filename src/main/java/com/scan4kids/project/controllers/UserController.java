@@ -3,7 +3,7 @@ package com.scan4kids.project.controllers;
 import com.scan4kids.project.daos.SubmissionsRepository;
 import com.scan4kids.project.daos.UsersRepository;
 import com.scan4kids.project.models.User;
-import com.scan4kids.project.services.UserService;
+//import com.scan4kids.project.services.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -21,14 +21,14 @@ public class UserController {
 
     private UsersRepository usersDao;
     private PasswordEncoder passwordEncoder;
-    private UserService userService;
+//    private UserService userService;
     private SubmissionsRepository submissionsDao;
 
 
-    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder, UserService userService, SubmissionsRepository submissionsDao) {
+    public UserController(UsersRepository usersDao, PasswordEncoder passwordEncoder, SubmissionsRepository submissionsDao) {
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
-        this.userService = userService;
+//        this.userService = userService;
         this.submissionsDao = submissionsDao;
 
      }
@@ -92,11 +92,11 @@ public class UserController {
         return "users/judge-dashboard";
     }
 
-    @GetMapping("/test-import")
-    @ResponseBody
-    public String importUsersFromCSV(){
-        userService.importUsersCSV();
-        return "imported";
-    }
+//    @GetMapping("/test-import")
+//    @ResponseBody
+//    public String importUsersFromCSV(){
+//        userService.importUsersCSV();
+//        return "imported";
+//    }
 
 }

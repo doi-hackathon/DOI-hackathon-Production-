@@ -40,9 +40,12 @@ public class User {
 
     //Many to many relationship with submissions for judging
 
+    @ManyToMany(mappedBy = "judges")
+    private List<Submission> submissions;
+
     public User(){}
 
-    public User(String username, String firstName, String lastName, String password, String email, Role role, String grade, String school) {
+    public User(String username, String firstName, String lastName, String password, String email, Role role, String grade, String school, List<Submission> submissions) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,6 +54,7 @@ public class User {
         this.role = role;
         this.grade = grade;
         this.school = school;
+        this.submissions = submissions;
     }
 
     public User(User copy) {
@@ -63,9 +67,10 @@ public class User {
         this.role = copy.role;
         this.grade = copy.grade;
         this.school = copy.school;
+        this.submissions = copy.submissions;
     }
 
-    public User(long id, String username, String firstName, String lastName, String password, String email, Role role) {
+    public User(long id, String username, String firstName, String lastName, String password, String email, Role role, List<Submission> submissions) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
@@ -73,6 +78,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.role = role;
+        this.submissions = submissions;
     }
 
     public long getId() {
@@ -145,5 +151,13 @@ public class User {
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public List<Submission> getSubmissions() {
+        return submissions;
+    }
+
+    public void setSubmissions(List<Submission> submissions) {
+        this.submissions = submissions;
     }
 }
