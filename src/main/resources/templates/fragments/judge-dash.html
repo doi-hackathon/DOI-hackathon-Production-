@@ -183,7 +183,13 @@
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>Once the challenge is complete, you will find a list of submissions assigned to you requiring scores. This will be a blind judging so you will not know the identity of the student whose submission you are scoring. However, if you feel that you recognize the work of a student you are scoring or otherwise have reason to believe that there may be a conflict of interest, please click the button next to the submission and a replacement submission will be assigned to you. </p>
+<!--                                    <p>Once the challenge is complete, you will find a list of submissions assigned to you requiring scores. This will be a blind judging so you will not know the identity of the student whose submission you are scoring. However, if you feel that you recognize the work of a student you are scoring or otherwise have reason to believe that there may be a conflict of interest, please click the button next to the submission and a replacement submission will be assigned to you. </p>-->
+
+                                        <div th:each="submission : ${submissionsForJudge}">
+                                            <a href="#" th:text="${submission.fileName}"></a>
+                                            <hr>
+                                        </div>
+
                                 </div>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjXqBgTNIb8ZzI3pztZa_Cbeww_lYMOEbj0GcZJPXAd3MgDA/viewform?usp=sf_link" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%" target="_blank">Conflict Form
                                 </a>

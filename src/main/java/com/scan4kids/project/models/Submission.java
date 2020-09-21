@@ -12,7 +12,11 @@ public class Submission {
     private long id;
 
     @Column
-    private String submission_file;
+    private String fileName;
+
+    @Column
+    @Lob
+    private byte[] file;
 
     @OneToOne
     private User owner;
@@ -33,16 +37,18 @@ public class Submission {
     public Submission() {
     }
 
-    public Submission(long id, String submission_file, User owner, List<Score> scores, List<User> judges) {
+    public Submission(long id, String fileName, byte[] file, User owner, List<Score> scores, List<User> judges) {
         this.id = id;
-        this.submission_file = submission_file;
+        this.fileName = fileName;
+        this.file = file;
         this.owner = owner;
         this.scores = scores;
         this.judges = judges;
     }
 
-    public Submission(String submission_file, User owner, List<Score> scores, List<User> judges) {
-        this.submission_file = submission_file;
+    public Submission(String fileName, byte[] file, User owner, List<Score> scores, List<User> judges) {
+        this.fileName = fileName;
+        this.file = file;
         this.owner = owner;
         this.scores = scores;
         this.judges = judges;
@@ -56,12 +62,20 @@ public class Submission {
         this.id = id;
     }
 
-    public String getSubmission_file() {
-        return submission_file;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setSubmission_file(String submission_file) {
-        this.submission_file = submission_file;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public byte[] getFile() {
+        return file;
+    }
+
+    public void setFile(byte[] file) {
+        this.file = file;
     }
 
     public User getOwner() {

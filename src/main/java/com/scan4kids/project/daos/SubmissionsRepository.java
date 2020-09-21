@@ -4,8 +4,11 @@ import com.scan4kids.project.models.Submission;
 import com.scan4kids.project.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface SubmissionsRepository extends JpaRepository<Submission, Long> {
 
     Submission findSubmissionsByOwner(User owner);
+    Submission findSubmissionsByFileName(String fileName);
 
 }
