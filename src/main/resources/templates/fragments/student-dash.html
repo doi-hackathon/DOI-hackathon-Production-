@@ -161,13 +161,14 @@
                                 <div class="post-footer">
 <!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
                                     <h3 class="card-title text-center">Upload Your Submission</h3>
-<!--                                    <form th:action="@{/submissions/create}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">-->
-<!--                                        <input class="mt-2" id="file" name="file" type="file" />-->
-<!--                                        <br>-->
-<!--                                        <input id="submission-confirmation" class="mt-2" type="submit" value="Upload" />-->
-<!--                                    </form>-->
-<!--                                </div>-->
-                                    <p class="d-flex justify-content-center">You will be able to submit your response starting on Wednesday September 22, 2020 starting at 9:00am.</p>
+
+                                    <form th:action="@{/upload/db}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
+                                        <input class="mt-2" id="file" name="file" type="file" />
+                                        <br>
+                                        <input id="submission-confirmation" class="mt-2" type="submit" value="Upload" />
+                                    </form>
+                                </div>
+<!--                                    <p class="d-flex justify-content-center">You will be able to submit your response starting on Wednesday September 16 2020.</p>-->
 
                             </div><!-- post-body end -->
                         </div><!-- 1st post end -->
