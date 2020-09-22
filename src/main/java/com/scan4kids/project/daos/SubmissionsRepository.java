@@ -10,5 +10,6 @@ public interface SubmissionsRepository extends JpaRepository<Submission, Long> {
 
     Submission findSubmissionsByOwner(User owner);
     Submission findSubmissionsByFileName(String fileName);
+    List<Submission> findSubmissionsByJudges(User judge);
 
 }

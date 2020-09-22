@@ -80,7 +80,7 @@ public class UserController {
         model.addAttribute("currentUserRole", currentUser.getRole().getId());
         model.addAttribute("currentUserEmail", currentUser.getEmail());
         model.addAttribute("currentUserSubmissions", submissionsDao.findSubmissionsByOwner(currentUser));
-        model.addAttribute("submissionsForJudge", submissionsDao.findSubmissionsByJudgeId(currentUser.getId()));
+        model.addAttribute("judgesSubmissions", submissionsDao.findSubmissionsByJudges(currentUser));
         return "users/dashboard";
     }
 
