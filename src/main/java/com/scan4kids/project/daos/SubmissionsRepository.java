@@ -9,7 +9,7 @@ import java.util.List;
 public interface SubmissionsRepository extends JpaRepository<Submission, Long> {
 
     Submission findSubmissionsByOwner(User owner);
-    Submission findSubmissionsByFileName(String fileName);
+    Submission findSubmissionsById(long id);
     List<Submission> findSubmissionsByJudges(User judge);
 
 }

@@ -109,12 +109,12 @@ public class SubmissionController {
         return ResponseEntity.ok(fileDownloadUri);
     }
 
-    @GetMapping("/download/{fileName:.+}/db")
-    public ResponseEntity<?> downloadFromDB(@PathVariable String fileName) {
-        Submission submission = submissionsDao.findSubmissionsByFileName(fileName);
+    @GetMapping("/download/{id}/db")
+    public ResponseEntity<?> downloadFromDB(@PathVariable long id) {
+        Submission submission = submissionsDao.findSubmissionsById(id);
         return ResponseEntity.ok()
 //                .contentType(MediaType.parseMediaType())
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + submission.getFileName() + "\"")
                 .body(submission.getFile());
     }
 
