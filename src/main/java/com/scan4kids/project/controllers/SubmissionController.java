@@ -90,7 +90,7 @@ public class SubmissionController {
 //    }
 
     @PostMapping("/upload/db")
-    public ResponseEntity<?> uploadToDB(@RequestParam("file") MultipartFile file) {
+    public String uploadToDB(@RequestParam("file") MultipartFile file) {
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Submission submission = new Submission();
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
@@ -106,7 +106,7 @@ public class SubmissionController {
                 .path("/files/download/")
                 .path(fileName).path("/db")
                 .toUriString();
-        return ResponseEntity.ok(fileDownloadUri);
+        return "submissions/success-page";
     }
 
     @GetMapping("/download/{id}/db")
