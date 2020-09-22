@@ -161,6 +161,7 @@
                                 <div class="post-footer">
 <!--                                    <a th:href="@{/submissions/create}" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%">Upload Your Submission</a>-->
                                     <h3 class="card-title text-center">Upload Your Submission</h3>
+
                                     <form th:action="@{/upload/db}" th:method="POST" th:object="${submission}" enctype="multipart/form-data">
                                         <input class="mt-2" id="file" name="file" type="file" />
                                         <br>
