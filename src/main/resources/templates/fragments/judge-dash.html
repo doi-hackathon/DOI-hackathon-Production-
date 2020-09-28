@@ -49,7 +49,7 @@
 
                                 <div class="entry-content">
                                     <p>Thank you for participating as a judge for the COVID-19 Data Challenge! As a judge, you will be evaluating submissions to this challenge based on criteria provided below. You will read the instructions for the challenge as they were provided to the students as well as review the data-sets they have used to come up with their solutions. Considering the instructions, data, and grade level of the student, you will provide a score for each criterion for each submission. Students will be ranked based on an aggregate score from multiple judges.</p>
-                                    <p>Judging will open on September 26th and needs to be complete by October 3rd. We anticipate each judge being assigned 8-12 student submissions. Each submission should take 15-30 minutes to review. Overall, we expect that you’ll need about 4 hours to complete the judging. For proof of volunteer hours for your employer, or for any other questions, please contact innovation@dallascityhall.com.</p>
+                                    <p>Judging will open on September 28th and needs to be complete by October 5th. We anticipate each judge being assigned multiple student submissions. Each submission should take 15-30 minutes to review. Overall, we expect that you’ll need about 2 to 3 hours to complete the judging. For proof of volunteer hours for your employer, or for any other questions, please contact innovation@dallascityhall.com.</p>
                                 </div>
 
 
@@ -72,13 +72,11 @@
                                 </div><!-- header end -->
 
                                 <div class="entry-content">
-                                    <p>Below are links to provided COVID-19 data from which you can draw your own conclusions and apply them to this challenge. You are allowed to use other publicly available data to produce your project; however, you must cite your data sources and any data source that is deemed to be disreputable will disqualify your project.
+                                    <p>Below are links to provided COVID-19 data from which students can draw their own conclusions and apply them to this challenge. They are allowed to use other publicly available data to produce your project; however, they must cite their data sources and any data source that is deemed to be disreputable will disqualify their project.
 
-                                        The judges are not looking for a specific analysis or a right or wrong answer. In fact, you can define the question you want to answer. We encourage you to review the datasets and create a question that you are interested in analyzing, from the impact of social distancing to food access to age groups. An example could be “are COVID-19 cases more prevalent in food deserts?”
+                                        Judges are not looking for a specific analysis or a right or wrong answer. In fact, the students can define the question you want to answer. We encourage the students to review the datasets and create a question that they are interested in analyzing, from the impact of social distancing to food access to age groups. An example could be “are COVID-19 cases more prevalent in food deserts?”
 
-                                        The data is deliberately provided in multiple formats. In data analysis, you will often need to interpret data that is incomplete, imperfect or may not seem connected. This is one of the challenges in data analysis, even for large organizations like the City or County and corporations. If you encounter a situation in any of the datasets where data appears to be missing or incomplete, please describe how you dealt with this in your analysis and any assumptions that you made. Finally, you are not required to use all the datasets in your analysis; just the ones relevant to the question you want to answer.
-
-                                        *Make sure you include the main question for your analysis in your submission so the judges know the question you wanted to answer, your data analysis, your conclusions and your recommendations.*
+                                        The data is deliberately provided in multiple formats and was provided to you as a judge so that you can familiarize yourself to the data the students used.
                                     </p>
                                     <ul>
                                         <a href="https://app.luminpdf.com/viewer/5f553c828911440019194ac5" target="_blank"><li style="list-style: none">DCHHS Weekly Summary ending 9/11/20</li></a>
@@ -153,17 +151,9 @@
 
                                 <div class="entry-content">
                                     <p>The COVID-19 pandemic is affecting people across our region. The DFW metroplex has had over 150,000 cases of COVID-19, and many of these cases have occurred in younger people. Those who are younger may feel fine and not have any symptoms, but may be unknowingly spreading the virus to their friends and family because of it. This makes it especially important for teenagers and young adults to be aware of the risks of the virus and to have a good understanding of how it is impacting our communities.</p>
-                                    <p>The COVID-19 Student Data Challenge is an opportunity for you and other students from our area to analyze real data-sets to learn more about COVID-19 and what’s happening in the Dallas area. By participating in the challenge, not only will you learn more about data skills and have a chance to win a prize, you will also have the opportunity to help spread awareness of COVID-19 and keep our schools and communities safe.</p>
-                                    <p>Your task is to produce a deliverable that demonstrates analysis of these data-sets and communicates insights that you’ve learned about COVID-19 through the data. These deliverables can be a Powerpoint, a dashboard, a written document, or any other format of communicating this information. The only rule is that submissions are capped at 20 pages maximum. We encourage you to use visuals as needed to explain your information.</p>
+                                    <p>The COVID-19 Student Data Challenge is an opportunity for students from our area to analyze real data-sets to learn more about COVID-19 and what’s happening in the Dallas area. By participating in the challenge, not only will students learn more about data skills and have a chance to win a prize, they will also have the opportunity to help spread awareness of COVID-19 and keep our schools and communities safe.</p>
+                                    <p>Their task is to produce a deliverable that demonstrates analysis of these data-sets and communicates insights that they've learned about COVID-19 through the data. These deliverables can be a Powerpoint, a dashboard, a written document, or any other format of communicating this information.</p>
                                     <h3>Submissions will be judged on the following criteria:</h3>
-                                    <ul>
-                                        <li>Data Management: how effectively you used data</li>
-                                        <li>Creativity: how innovatively you used the data</li>
-                                        <li>Analysis: how thoughtful and insightful your results were</li>
-                                        <li>Visualization: how effective your data visualizations were</li>
-                                        <li>Coding: how well you used code to generate results</li>
-                                        <li>Professionalism: how neat your grammar, formatting, and citations are</li>
-                                    </ul>
                                 </div>
                             </div><!-- post-body end -->
                         </div><!-- 1st post end -->
@@ -186,10 +176,34 @@
 <!--                                    <p>Once the challenge is complete, you will find a list of submissions assigned to you requiring scores. This will be a blind judging so you will not know the identity of the student whose submission you are scoring. However, if you feel that you recognize the work of a student you are scoring or otherwise have reason to believe that there may be a conflict of interest, please click the button next to the submission and a replacement submission will be assigned to you. </p>-->
 
                                         <div th:each="submission : ${judgesSubmissions}">
-                                            <a th:href="@{/download/{id}/db(id=${submission.id})}" th:text="${submission.fileName}"></a>
+                                            <ul class="d-flex justify-content-between" style="list-style: none">
+                                                <li><a th:href="@{/download/{id}/db(id=${submission.id})}" th:text="${submission.fileName}"></a></li>
+                                                <li th:text="'GRADE: ' + ${submission.owner.grade}"></li>
+                                                <li><a href="/score" class="btn">Score Submission</a></li>
+                                            </ul>
                                             <hr>
                                         </div>
 
+                                </div>
+                            </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+                        <div class="post">
+
+
+                            <div class="post-body mt-2 pt-3">
+                                <div class="post-meta">
+
+
+
+                                </div>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">Conflict of Interest</a>
+                                    </h2>
+                                </div><!-- header end -->
+
+                                <div class="entry-content">
+                                    <p>Once the challenge is complete, you will find a list of submissions assigned to you requiring scores. This will be a blind judging so you will not know the identity of the student whose submission you are scoring. However, if you feel that you recognize the work of a student you are scoring or otherwise have reason to believe that there may be a conflict of interest, please click the button below and a replacement submission will be assigned to you. </p>
                                 </div>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjXqBgTNIb8ZzI3pztZa_Cbeww_lYMOEbj0GcZJPXAd3MgDA/viewform?usp=sf_link" class="btn rounded-pill" style="background-color: #803E97; color: white; width: 100%" target="_blank">Conflict Form
                                 </a>
