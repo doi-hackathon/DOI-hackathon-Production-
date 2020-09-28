@@ -9,7 +9,7 @@ public class ScoresController {
 
     @GetMapping("/score")
     public String showScoreForm() {
-        return "scores/scowes";
+        return "scores/scores";
     }
 
 
