@@ -178,7 +178,10 @@
                                             <ul class="d-flex justify-content-between" style="list-style: none">
                                                 <li><a th:href="@{/download/{id}/db(id=${submission.id})}" th:text="${submission.fileName}"></a></li>
                                                 <li th:text="'GRADE: ' + ${submission.owner.grade}"></li>
-                                                <li><a href="/score" class="btn">Score Submission</a></li>
+<!--                                                <li>-->
+<!--                                                    <form th:action="${'/submissions/' + submission.id + '/score'}" th:method="GET"><button class="btn">Score Submission</button></form>-->
+<!--                                                </li>-->
+                                                <li><a th:href="'/submissions/' + ${submission.id} + '/score'" class="btn">Score Submission</a></li>
                                             </ul>
                                             <hr>
                                         </div>
