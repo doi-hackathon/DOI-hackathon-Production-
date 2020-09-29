@@ -112,6 +112,11 @@
                                 <option value="10">10</option>
                             </select>
                         </div>
+                        <hr>
+                        <div class="form-label-group">
+                            <label for="comment">Leave a comment</label>
+                            <input type="text" id="comment" name="comment" class="form-control" th:classappend="validate" th:field="*{comment}" required autofocus>
+                        </div>
                         <button class="login-signup-button btn btn-lg btn-block text-uppercase mt-3" type="submit" style="background-color: #ff007a; color: white;">Submit
                         </button>
                     </form>
