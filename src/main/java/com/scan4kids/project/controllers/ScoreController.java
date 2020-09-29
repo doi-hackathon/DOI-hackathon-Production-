@@ -38,6 +38,8 @@ public class ScoreController {
         model.addAttribute("score", score);
         model.addAttribute("submission", submission);
 
+        score.setTotalScore(score.getAnalysis() + score.getCoding() + score.getCreativity() + score.getDataManagement() + score.getProfessionalism() + score.getVisualization());
+
         scoresDao.save(score);
 
         return "redirect:/dashboard";
