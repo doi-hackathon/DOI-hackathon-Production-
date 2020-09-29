@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head('Score Submission')">
     <meta charset="UTF-8"/>
-    <title>Score Submission</title>
+    <title>Sign up</title>
 </head>
 <body>
 <div th:replace="fragments/navbar">
@@ -16,106 +16,108 @@
                 </div>
                 <div class="card-body mt-5">
                     <h2 class="card-title text-center mb-5">Score Submission</h2>
-                    <form th:action="@{/submissions/{id}/score}" method="POST" th:object="${score}"><div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Analysis</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                    </select>
-                </div>
-                <hr>
-                <div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Coding</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <hr>
-                <div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Creativity</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <hr>
-                <div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Visualization</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <hr>
-                <div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Professionalism</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <hr>
-                <div class="form-label-group d-flex justify-content-between">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Data Management</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Score</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-                </form>
+                    <form th:action="@{'submissions/' + ${submission.id} + '/score'}" method="POST" th:object="${score}">
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="analysis">Analysis</label>
+                            <select class="custom-select my-1 mr-sm-2" id="analysis" name="analysis" th:field="*{analysis}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="coding">Coding</label>
+                            <select class="custom-select my-1 mr-sm-2" id="coding" name="coding" th:field="*{coding}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="creativity">Creativity</label>
+                            <select class="custom-select my-1 mr-sm-2" id="creativity" name="creativity" th:field="*{creativity}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="visualization">Visualization</label>
+                            <select class="custom-select my-1 mr-sm-2" id="visualization" name="visualization" th:field="*{visualization}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="professionalism">Professionalism</label>
+                            <select class="custom-select my-1 mr-sm-2" id="professionalism" name="professionalism" th:field="*{professionalism}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-label-group d-flex justify-content-between">
+                            <label class="my-1 mr-2" for="dataManagement">Data Management</label>
+                            <select class="custom-select my-1 mr-sm-2" id="dataManagement" name="dataManagement" th:field="*{dataManagement}">
+<!--                                <option selected value="Select Score">Select Score</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <button class="login-signup-button btn btn-lg btn-block text-uppercase mt-3" type="submit">Submit
+                        </button>
+                    </form>
 
-                <button class="login-signup-button btn btn-lg btn-block text-uppercase mt-3" type="submit">Submit
-                </button>
-                </form>
+
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <section th:replace="fragments/section :: section"></section>
 </body>

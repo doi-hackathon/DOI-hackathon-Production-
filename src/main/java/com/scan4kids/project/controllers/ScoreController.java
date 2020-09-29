@@ -31,11 +31,12 @@ public class ScoreController {
     }
 
     @PostMapping("/submissions/{id}/score")
-    public String addScore(@ModelAttribute Score score, @ModelAttribute Submission submission,Model model, @PathVariable long id) {
+    public String addScore(@ModelAttribute Score score, Model model, @ModelAttribute Submission submission) {
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         score.setJudge(currentUser);
         score.setSubmission(submission);
         model.addAttribute("score", score);
+        model.addAttribute("submission", submission);
 
         scoresDao.save(score);
 
