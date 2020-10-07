@@ -30,13 +30,15 @@ public class ScoreController {
         return "scores/scores";
     }
 
-    @PostMapping("/submissions/{id}/score")
-    public String addScore(@ModelAttribute Score score, Model model, @ModelAttribute Submission submission) {
+    @PostMapping("/submissions/{subId}/score")
+    public String addScore(@ModelAttribute Score score, Model model, @PathVariable long subId) {
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         score.setJudge(currentUser);
-        score.setSubmission(submission);
-        model.addAttribute("score", score);
-        model.addAttribute("submission", submission);
+        Submission submissionToScore = submissionsDao.getOne(subId);
+        score.setSubmission(submissionToScore);
+
+//        model.addAttribute("score", score);
+//        model.addAttribute("submission", submission);
 
         score.setTotalScore(score.getAnalysis() + score.getCoding() + score.getCreativity() + score.getDataManagement() + score.getProfessionalism() + score.getVisualization());
 
