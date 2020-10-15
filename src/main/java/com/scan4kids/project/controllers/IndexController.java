@@ -19,6 +19,11 @@ public class IndexController {
         return "about";
     }
 
+    @GetMapping("/winners")
+    public String winners() {
+        return "winners";
+    }
+
 
 //    @GetMapping("/donate")
 //    public String donate() {
