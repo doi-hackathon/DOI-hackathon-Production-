@@ -38,7 +38,7 @@ public class Score {
     @JoinColumn (name = "submission_id")
     private Submission submission;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String comment;
 
     public Score() {
